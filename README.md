@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/onrik/micha.svg?branch=master)](https://travis-ci.org/onrik/micha)
 [![Coverage Status](https://coveralls.io/repos/github/onrik/micha/badge.svg?branch=master)](https://coveralls.io/github/onrik/micha?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/alekseiapa/tg-client)](https://goreportcard.com/report/github.com/alekseiapa/tg-client)
 [![GoDoc](https://godoc.org/github.com/alekseiapa/tg-client?status.svg)](https://godoc.org/github.com/alekseiapa/tg-client)
 [![Gitter](https://badges.gitter.im/onrik/micha.svg)](https://gitter.im/onrik/micha)
 
