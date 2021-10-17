@@ -1,12 +1,13 @@
 package main
 
 import (
-	"github.com/alekseiapa/tg-client"
 	"log"
+
+	"github.com/alekseiapa/tg-client"
 )
 
 func main() {
-	bot, err := micha.NewBot("164644784:AAH8ZAXl-naLedvGqf7X2nIGYL184dpJICQ")
+	bot, err := tg.NewBot("<token>")
 	if err != nil {
 		log.Fatal(err)
 	}
