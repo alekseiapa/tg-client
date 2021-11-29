@@ -1,6 +1,6 @@
 module github.com/alekseiapa/tg-client
 
-go 1.19
+go 1.22
 
 require (
 	github.com/jarcoal/httpmock v1.3.1
