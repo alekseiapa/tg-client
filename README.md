@@ -1,27 +1,36 @@
-# Micha
+# Telegram Bot API Client 
 
-[![Tests](https://github.com/alekseiapa/tg-client/workflows/Tests/badge.svg)](https://github.com/alekseiapa/tg-client/actions)
-[![Coverage Status](https://coveralls.io/repos/github/onrik/micha/badge.svg?branch=master)](https://coveralls.io/github/onrik/micha?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/alekseiapa/tg-client)](https://goreportcard.com/report/github.com/alekseiapa/tg-client)
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/alekseiapa/tg-client)](https://pkg.go.dev/github.com/alekseiapa/tg-client)
+Go client library for interacting with the [Telegram Bot API](https://core.telegram.org/bots/api). It allows developers to easily create Telegram bots with Go. Whether you want to create a simple echo bot or a complex bot that uses all available API features.
 
-Client lib for [Telegram bot api](https://core.telegram.org/bots/api).
+---
 
-### Simple echo bot
+## 📦 Installation
+
+Ensure you have [Go](https://golang.org) installed and configured. To install the library, use the following command:
+
+```bash
+go get github.com/alekseiapa/tg-client
+```
+
+---
+
+## ⚡️ Quick Start
+
+Here's a quick example to create a simple echo bot:
+
 ```go
 package main
 
 import (
     "log"
-	
+
     "github.com/alekseiapa/tg-client"
 )
 
 func main() {
     bot, err := tg.NewBot("<token>")
     if err != nil {
-        log.Println(err)
-        return
+        log.Fatal(err)
     }
 
     go bot.Start()
@@ -32,36 +41,29 @@ func main() {
         }
     }
 }
-
 ```
 
+### Custom API Server
 
-### Custom [Telegram Bot API](https://github.com/tdlib/telegram-bot-api)
+It's possible to use Client with a custom API server:
+
 ```go
 package main
 
 import (
     "log"
-	
+
     "github.com/alekseiapa/tg-client"
 )
 
 func main() {
-    bot, err := micha.NewBot(
+    bot, err := tg.NewBot(
         "<token>",
-        micha.WithAPIServer("http://127.0.0.1:8081"),
+        tg.WithAPIServer("http://127.0.0.1:8081"),
     )
     if err != nil {
-        log.Println(err)
-        return
+        log.Fatal(err)
     }
-
-    err = bot.Logout()
-    if err != nil {
-        log.Println(err)
-        return
-    }
-
 
     go bot.Start()
 
@@ -71,5 +73,42 @@ func main() {
         }
     }
 }
-
 ```
+
+---
+
+## 🌟 Features
+
+- **Comprehensive API Coverage**: Support for all Telegram Bot API methods.
+- **Customizable**: Use custom API servers and HTTP clients.
+- **Streaming**: Long polling with `Start()` and `Stop()` methods to manage updates efficiently.
+- **Webhook Support**: Easily configure webhooks.
+- **Error Handling**: Detailed error messages for efficient debugging.
+- **Middleware**: Chainable middleware.
+
+---
+
+## 📚 Documentation
+
+- **Telegram Bot API Documentation**: Visit the [official documentation](https://core.telegram.org/bots/api)
+
+
+---
+
+## 🧪 Testing
+
+Run the test suite using:
+
+```bash
+go test -covermode=atomic -coverprofile=profile.cov ./...
+```
+
+---
+
+
+### Credits & Acknowledgements
+This project was inspired by the original project by Micha.
+
+All rights and credits for the original idea, design, and concept belong to the original author. I used this project solely for learning and study purposes to improve my Go programming skills.
+
+Thank you to the original author!
